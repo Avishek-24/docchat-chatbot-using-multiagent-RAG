@@ -1,7 +1,4 @@
-"""DocChat Lite: chat with your documents, 100% local and free.
 
-Run with:  streamlit run app.py
-"""
 from __future__ import annotations
 
 import hashlib
@@ -25,20 +22,16 @@ ss.setdefault("index_warnings", [])
 ss.setdefault("index_note", "")
 
 
-# --------------------------------------------------------------------------
-# Cached resources
-# --------------------------------------------------------------------------
+
 @st.cache_resource(show_spinner="Loading the embedding model (first run downloads ~130 MB)…")
 def load_embedder():
     try:
         return Embedder(), None
-    except Exception as exc:  # offline, disk full, etc. Fall back to keyword-only
+    except Exception as exc:  
         return None, str(exc)
 
 
-# --------------------------------------------------------------------------
-# Rendering helpers
-# --------------------------------------------------------------------------
+
 def render_extras(msg: dict) -> None:
     """Verification badge + sources, shown under an assistant answer."""
     v = msg.get("verification")
@@ -124,9 +117,7 @@ def answer_live(question: str, client: OllamaClient, k: int, verify: bool, retri
     return msg
 
 
-# --------------------------------------------------------------------------
-# Sidebar: model, documents, settings
-# --------------------------------------------------------------------------
+
 with st.sidebar:
     st.title("📄 DocChat Lite")
     st.caption("Ask questions about your documents. Runs on your computer, free.")

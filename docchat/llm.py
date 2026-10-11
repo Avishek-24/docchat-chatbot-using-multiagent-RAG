@@ -1,4 +1,4 @@
-"""Tiny Ollama client. Plain HTTP via `requests`, so no extra SDK is needed."""
+
 from __future__ import annotations
 
 import json

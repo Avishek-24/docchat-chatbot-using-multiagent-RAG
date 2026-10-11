@@ -1,9 +1,4 @@
-"""Hybrid retrieval: BM25 + persistent Chroma semantic search, merged with RRF.
-A NumPy cosine fallback keeps tests and offline recovery possible.
 
-If the embedding model can't load (e.g. you're offline on first run), the
-retriever quietly falls back to keyword-only search instead of crashing.
-"""
 from __future__ import annotations
 
 import re
@@ -15,7 +10,7 @@ from typing import Callable, List, Optional
 import numpy as np
 try:
     from rank_bm25 import BM25Plus
-except ImportError:  # lightweight fallback for offline smoke tests
+except ImportError:  
     class BM25Plus:
         """Small positive keyword scorer used only when rank-bm25 is unavailable."""
         def __init__(self, corpus):

@@ -1,8 +1,4 @@
-"""Read PDF / DOCX / TXT / MD files and cut them into searchable chunks.
 
-Everything works from raw bytes in memory, so there are no temp files,
-no path problems and no file-name quirks on Windows.
-"""
 from __future__ import annotations
 
 import hashlib

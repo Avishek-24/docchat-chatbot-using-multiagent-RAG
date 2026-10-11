@@ -1,22 +1,4 @@
-"""The three agents and the pipeline that connects them.
 
-    question -> retrieve -> RelevanceChecker --NO_MATCH--> polite refusal
-                                  |
-                                  v
-                  ResearchAgent (draft answer, streamed)
-                                  |
-                                  v
-                  VerificationAgent (fact-check vs. excerpts)
-                                  |
-              issues found?  ---- yes (and retries left) ----> back to ResearchAgent
-                                  |
-                                  no / out of retries
-                                  v
-                               final answer + verdict
-
-The pipeline is a generator that yields events, so the UI can show live
-status and streamed tokens without this file knowing anything about Streamlit.
-"""
 from __future__ import annotations
 
 import json

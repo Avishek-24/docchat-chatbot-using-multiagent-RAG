@@ -1,13 +1,4 @@
-"""Measure how accurate DocChat Lite is on YOUR documents and questions.
 
-    python evaluate.py --docs report.pdf --questions eval_questions.json --model qwen2.5:3b
-
-Each question in the JSON file can have:
-  "must_contain":     ["1.21"]   every string must appear in the answer
-  "must_not_contain": ["1.12"]   none of these may appear (catches hallucinations)
-  "out_of_scope":     true       the app should refuse (nothing in the docs matches)
-Run it with and without --no-verify to see what the fact-checking step adds.
-"""
 import argparse
 import csv
 import json
