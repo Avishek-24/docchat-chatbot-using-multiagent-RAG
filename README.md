@@ -137,13 +137,3 @@ docchat-local-rag/
 └── .cache/               # created at runtime; embedding model cache
 ```
 
-## Important limitations
-
-- Image-only/scanned PDFs may need OCR before upload. A text extractor cannot reliably read text that exists only as pixels.
-- Tables can be extracted where PyMuPDF recognizes them, but complex layouts may need manual verification.
-- The verifier is another LLM pass, not a guarantee of correctness. Always inspect citations for important decisions.
-- All uploaded content is processed locally by this app, but Ollama and embedding models must be installed from their respective distributors.
-
-## Resume description
-
-**Local Document Intelligence (RAG) Assistant** — Built a Streamlit document-chat application using Ollama for local LLM inference, ChromaDB for persistent vector storage, FastEmbed embeddings, and hybrid BM25 + semantic retrieval with Reciprocal Rank Fusion. Implemented page-aware PDF ingestion, grounded source-cited answers, out-of-scope abstention, and LLM-based answer verification.
