@@ -1,5 +1,20 @@
+# Python
 .venv/
-.env
 __pycache__/
 *.py[cod]
-.ipynb_checkpoints/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Downloaded models and caches
+.cache/
+chroma_db/
+*.onnx
+
+# IDE files
+.idea/
+.vscode/
+
+# Logs
+*.log

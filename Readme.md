@@ -176,6 +176,3 @@ DocChat is evaluated using the **RAGAS (RAG Assessment) framework**:
 
 ---
 
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
