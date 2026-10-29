@@ -163,16 +163,7 @@ DocChat/
 
 ---
 
-## 🧪 Evaluation & Accuracy Testing
 
-DocChat is evaluated using the **RAGAS (RAG Assessment) framework**:
 
-| Metric | Target | Description |
-| :--- | :--- | :--- |
-| **Faithfulness** | **100%** | Guarantees generated answers are strictly grounded in context without numerical hallucinations. |
-| **Answer Relevance** | **> 90%** | Measures how directly the response answers the prompt. |
-| **Context Precision** | **> 85%** | Evaluates whether top-8 RRF retrieval brings the exact source tables/footnotes. |
-| **Scope F1-Score** | **100%** | Ensures out-of-scope or unmentioned queries return `NO_MATCH` alerts. |
 
----
 
