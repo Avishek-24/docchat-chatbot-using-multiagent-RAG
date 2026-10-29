@@ -1,6 +1,0 @@
-[
-  {"question": "What was the PUE of the Singapore 2nd facility in 2022?", "must_contain": ["1.21"]},
-  {"question": "What was the PUE of the Singapore 2nd facility in 2019?", "must_not_contain": ["1.12"]},
-  {"question": "What was the regional average carbon-free energy (CFE) in Asia Pacific in 2023?", "must_contain": ["12"]},
-  {"question": "Who won the 2011 cricket world cup?", "out_of_scope": true}
-]

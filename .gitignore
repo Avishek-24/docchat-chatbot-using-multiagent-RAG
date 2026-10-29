@@ -1,8 +1,0 @@
-g__pycache__/
-*.py[cod]
-.venv/
-venv/
-.env
-.cache/
-data/chroma/
-.streamlit/secrets.toml
