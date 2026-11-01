@@ -2,12 +2,21 @@ from typing import List
 from langchain_community.retrievers import BM25Retriever
 from langchain_community.vectorstores import Chroma
 from langchain_classic.retrievers.ensemble import EnsembleRetriever
-from langchain_ollama import OllamaEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
+#from langchain_ollama import OllamaEmbeddings
 from langchain_core.documents import Document
 
+# class RetrieverBuilder:
+#     def __init__(self, model_name: str = "mxbai-embed-large"):
+#         self.embeddings = OllamaEmbeddings(model=model_name)
+
 class RetrieverBuilder:
-    def __init__(self, model_name: str = "mxbai-embed-large"):
-        self.embeddings = OllamaEmbeddings(model=model_name)
+    def __init__(self, model_name: str = "BAAI/bge-small-en-v1.5"):
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name=model_name,
+            encode_kwargs={"normalize_embeddings": True},
+        )
+
 
     def build_hybrid_retriever(self, docs: List[Document], k: int = 8) -> EnsembleRetriever:
         # 1. BM25 Lexical Search

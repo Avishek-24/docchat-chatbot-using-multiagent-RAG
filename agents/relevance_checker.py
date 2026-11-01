@@ -1,9 +1,11 @@
-from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
+#from langchain_ollama import ChatOllama
 from langchain_core.messages import HumanMessage
 
 class RelevanceChecker:
-    def __init__(self, model_name: str = "llama3.2"):
-        self.llm = ChatOllama(model=model_name, temperature=0.0)
+    def __init__(self, model_name: str = "openai/gpt-oss-120b"):
+        self.llm = ChatGroq(model=model_name, temperature=0.0)
+        #self.llm = ChatOllama(model=model_name, temperature=0.0)
 
     def check(self, question: str, retriever, k: int = 8) -> str:
         docs = retriever.invoke(question)

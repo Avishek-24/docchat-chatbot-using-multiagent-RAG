@@ -58,3 +58,11 @@ if st.button("Submit Query") and query:
             else:
                 st.markdown("### Answer")
                 st.markdown(result["final_output"])
+
+                with st.expander("🧠 Agent trace"):
+                    st.write(f"**Attempts:** {result['attempts']}")
+                    st.write("**Searches the agent chose to run:**")
+                    for i, q in enumerate(result["search_queries"], 1):
+                        st.write(f"{i}. `{q}`")
+                    sources = sorted({d.metadata.get("source", "unknown") for d in result["docs"]})
+                    st.write(f"**Sources used:** {', '.join(sources)}")
