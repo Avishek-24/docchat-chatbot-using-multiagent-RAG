@@ -19,7 +19,7 @@ if "builder" not in st.session_state:
 if "workflow" not in st.session_state:
     st.session_state.workflow = AgentWorkflow()
 if "retriever" not in st.session_state:
-    st.session_state.retriever = None
+    st.session_state.retriever = st.session_state.builder.load_hybrid_retriever()
 
 with st.sidebar:
     st.header("1. Upload Documents")
